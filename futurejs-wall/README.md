@@ -168,4 +168,19 @@ We are going to make the background color animated randomly!
 
 Let's make the background animate randomly but to closer softer variants.
 
-* New fn in `color.cljs`. `randomize-color`
+* New fn in `color.cljs`. `randomize-color!`
+  Takes a color and returns a new one that is slightly different than the one passed in.
+* Use that in `background.cljs` to make the background updates smoother.
+
+*Code is in `src-steps/6`*
+
+### 9. Multiple tiles in the background!!
+
+This is a bit boring, lets make the background be a collection of squares the of a random-size between 10 and 400 that ocupy all the
+screen.
+
+* Our background is now a map `{:x :y :width ...}`. We have to change it to be a collection of maps `[{} {} {}]` that fill up the whole screen.
+* Lets mess with `background/create` to return that collection.
+
+
+
