@@ -141,4 +141,31 @@ We are going to add a big title.
 
 *Code is in `src-steps/4`*
 
-### 7.
+### 7. Animate background color randomly
+
+We are going to make the background color animated randomly!
+
+* Let's create a color ns for dealing with color logic
+* We will agree that a color is a vector of its 3 components [r g b]
+* Let's create a function that will generate a random color (hint: `rand-int`)
+* Let's also create a function to convert a [r g b] to a "#rrggbb" str
+  * Hint: (16).toString(16) === '10' & pad numbers to 2 digits
+* Use our newly created random color fn in the background creation entity
+  * Import
+  * Change initial color to a random one
+  * Change update to be a function that updates the color to a random one
+    (hint: assoc)
+    (hint: the return value of the update function will be the new value of the entity)
+  * Change render! function to render the color as hex
+* Don't forget to eval all the code
+* Go to `core.cljs` and eval where we add the background entity
+
+*Code is in `src-steps/5`*
+
+*To stop the epileptic background, change the add-entity update function to nil and re-eval*
+
+### 8. Soft background color animation
+
+Let's make the background animate randomly but to closer softer variants.
+
+* New fn in `color.cljs`. `randomize-color`
