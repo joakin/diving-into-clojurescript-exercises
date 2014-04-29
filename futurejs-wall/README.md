@@ -193,4 +193,11 @@ Pretty sweet.
 
 *Code is in `src-steps/7`*
 
+### 10. Regen background each 1500ms
+
+Let's make it a bit more dynamic by regenerating the background each 1500ms.
+
+* Go to `core.cljs` and each 1500ms regen the background.
+
+
 
