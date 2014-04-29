@@ -14,9 +14,9 @@
   :cljsbuild {
     :builds [{:id "lt-plugins"
               :source-paths ["src"]
-              :compiler {
-                :output-to "web/lt_plugins.js"
-                :output-dir "web/out"
-                :optimizations :none
-                :source-map true
-                :preamble ["reagent/react.js"]}}]})
+              :compiler
+              {:output-to "web/lt_plugins.js"
+               :output-dir "web/out"
+               :optimizations :none
+               :source-map true
+               }}]})
