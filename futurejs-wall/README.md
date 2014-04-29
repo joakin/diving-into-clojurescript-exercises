@@ -102,7 +102,7 @@ Cool, we know now.
 
 ### 3. Initialize our canvas.
 
-We will use monet to manage the canvas. [Usage](https://github.com/rm-hull/monet)
+We will use monet to manage the canvas. [Usage](https://github.com/rm-hull/monet) and [API](http://www.destructuring-bind.org/monet/)
 
 * Get the dom element
 * Initialize canvas/init and save the returning monet-canvas
@@ -130,4 +130,15 @@ We will use monet to manage the canvas. [Usage](https://github.com/rm-hull/monet
 
 *Code is in `src-steps/3`*
 
+### 6. Add some text
 
+We are going to add a big title.
+
+* Create a new `text` namespace
+* Follow the same as in background. Text will have `x` `y` and `text` values.
+* Use the
+* In `core.cljs` add at the end a section to add a new entity
+
+*Code is in `src-steps/4`*
+
+### 7.
