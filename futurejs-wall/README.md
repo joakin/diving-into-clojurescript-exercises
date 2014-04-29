@@ -14,6 +14,8 @@ code.
 
 The different versions of the code are stored in `src-steps/`.
 
+Library reference:
+https://github.com/rm-hull/monet
 
 Steps
 -----
