@@ -176,11 +176,21 @@ Let's make the background animate randomly but to closer softer variants.
 
 ### 9. Multiple tiles in the background!!
 
-This is a bit boring, lets make the background be a collection of squares the of a random-size between 10 and 400 that ocupy all the
+This is a bit boring, lets make the background be a collection of squares the of a random-size between 10 and 250 that ocupy all the
 screen.
 
 * Our background is now a map `{:x :y :width ...}`. We have to change it to be a collection of maps `[{} {} {}]` that fill up the whole screen.
-* Lets mess with `background/create` to return that collection.
+* Lets mess with `background/create` to return that collection. (Hint: list comprehensions `for`). Example:
 
+```
+({:x 0, :y 0, :w 357, :h 357, :color (217 142 25)} {:x 0, :y 1, :w 357, :h 357, :color (74 251 79)} {:x 1, :y 0, :w 357, :h 357, :color (69 45 218)} {:x 1, :y 1, :w 357, :h 357, :color (1 43 244)})
+```
+
+* Now we have to change our `update` function to deal with the collection.
+* And finally let's update our `render!` function (Hint: `doseq`)
+
+Pretty sweet.
+
+*Code is in `src-steps/7`*
 
 
