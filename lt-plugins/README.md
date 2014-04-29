@@ -77,3 +77,17 @@ Let's try this example:
 Then, render a title and a placeholder for where we will list our plugins
 
 *Code is in `src-steps/2`*
+
+3. Fetch data from the internets
+
+We could use cljs-ajax to fetch the list of plugins from our server,
+since we are doing just the frontend, I faked something. Look at
+`src-steps/3/ajax.cljs` and paste it in your project.
+
+* Include our new namespace in `core`
+* Call to `ajax/get-plugins` to see what is in there
+* Print the first result to the console to see what we can show
+
+*Code is in `src-steps/2`*
+
+4.
