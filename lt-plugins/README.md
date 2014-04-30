@@ -6,12 +6,17 @@ A small webapp for the **diving into clojurescript** workshop.
 
 We are going to build a small webapp to visualize the lighttable plugins on a list.
 
+For compiling:
 ```
 lein cljsbuild auto
 ```
 
-Open lighttable and a browser tab, and connect to it to eval and play with the
-code.
+For serving the app from a server (for the ajax calls) (in another terminal)
+```
+lein ring server
+```
+
+Open lighttable and a browser tab, and connect to `localhost:3000/` to eval and play with the code.
 
 The different versions of the code are stored in `src-steps/`.
 
