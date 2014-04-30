@@ -22,4 +22,4 @@
   (reagent/render-component [app] app-dom)
   )
 
-(println (first (ajax/get-plugins)))
+(println (first @(ajax/get-plugins)))

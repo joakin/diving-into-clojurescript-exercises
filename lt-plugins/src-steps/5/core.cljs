@@ -59,7 +59,7 @@
 
 (defn plugins [ps]
   [:div.plugins
-   (for [p ps] [plugin p])])
+   (for [p @ps] [plugin p])])
 
 (defn app [data]
   [:div.app

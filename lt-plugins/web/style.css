@@ -58,7 +58,9 @@ div.plugin>div.actions>button.expand { width: 28px; }
 .plugin>.details {display: block; padding: 20px;
                   background-color: #eee;
                   border-radius: 4px;
-                  box-shadow: inset 0 00px 20px rgba(0,0,0,0.1)}
+                  box-shadow: inset 0 00px 20px rgba(0,0,0,0.1);
+                  }
+
 .plugin>.details>p.desc {margin-top: 0}
 
 .label-value {overflow:hidden;}

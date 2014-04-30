@@ -31,4 +31,4 @@
 
 (defn plugins [ps]
   [:div.plugins
-   (for [p ps] ^{:key p} [plugin p])])
+   (for [p @ps] ^{:key p} [plugin p])])
