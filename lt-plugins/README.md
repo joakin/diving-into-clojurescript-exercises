@@ -48,7 +48,7 @@ Look for project.clj. Compilation setup and dependencies.
   * Open the console (View -> Console) and see the println do its thing (shares browser tab console with LT console)
 
 
-2. Reagent mini-intro
+### 2. Reagent mini-intro
 
 Reagent is a cljs->react interface. Components are just functions that return data structures or other functions.
 
@@ -83,7 +83,7 @@ Then, render a title and a placeholder for where we will list our plugins
 
 *Code is in `src-steps/2`*
 
-3. Fetch data from the server
+### 3. Fetch data from the server
 
 We could use cljs-ajax to fetch the list of plugins from our server,
 since we are doing just the frontend, I faked something. Look at
@@ -95,12 +95,12 @@ since we are doing just the frontend, I faked something. Look at
 
 *Code is in `src-steps/3`*
 
-4. Printing the list of plugins
+### 4. Printing the list of plugins
 
 Print a list of the names of the plugins.
 
 * Just pass the data to your root app component, and pass it down to its subcomponents
-* map your new plugin component over the plugins list
+* Use `for` calling your new plugin component over the plugins list
 
 Try to generate something like this:
 
@@ -109,5 +109,50 @@ Try to generate something like this:
       <p class=version>0.0.0
       <p class=installs>12
 
-*Code is in `src-steps/3`*
+*Code is in `src-steps/4`*
+
+### 5. Detailed view of the plugin
+
+We are going to add a button to the plugin component, and a detailed view of all the plugin data that will be shown when we click this "expand" button.
+
+* Modify your plugin component to add the button:
+
+    <div class=actions>
+      <button class=expand>+</button>
+
+* Add an on-click handler to the attributes map.
+* Add state to the plugin: expanded (true|false).
+  * You have to make your plugin function return a function (let [...] (fn [] ...)) as seen in the [Time component](https://github.com/holmsand/reagent#examples)
+  * We encapsulate state in an atom, locally to the component `(atom false)`
+  * We get the value of the atom with `(deref x)` or just `@x`
+  * Change the + to a - depending on the state
+* Make the click handler `swap` the atom value to transition state
+* Create a new component, `plugin-details`. It gets plugin data and renders it all detailed. Call it from `plugin` when it is in its state expanded (at the end of the `.plugin` div)
+  * Render this keys: `{:keys [added updated installs repo url user] {:keys [name version author source desc]} :info}`
+
+Try to get the details with this structure:
+
+    <div class="details">
+      <p class="desc">Clojure integration for Light Table</p>
+      <div class="label-value">
+        <div class="label">By</div>
+        <div class="value">Kodowa</div>
+      </div>
+      <div class="label-value">
+        <div class="label">Updated</div>
+        <div class="value">Thu Apr 17 2014</div>
+      </div>
+      <div class="label-value">
+        <div class="label">Added</div>
+        <div class="value">Wed Jan 08 2014</div>
+      </div>
+      <div class="label-value">
+        <div class="label">Url</div>
+        <div class="value">
+          <a href="https://github.com/LightTable/Clojure">https://github.com/LightTable/Clojure</a>
+        </div>
+      </div>
+    </div>
+
+*Code is in `src-steps/5`*
 

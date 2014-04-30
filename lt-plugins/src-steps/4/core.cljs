@@ -32,7 +32,7 @@
 
 (defn plugins [ps]
   [:div.plugins
-   (map plugin ps)])
+   (for [p ps] [plugin p])])
 
 (defn app [data]
   [:div.app
