@@ -90,10 +90,20 @@ Then, render a title and a placeholder for where we will list our plugins
 
 ### 3. Fetch data from the server
 
-We could use cljs-ajax to fetch the list of plugins from our server,
-since we are doing just the frontend, I faked something. Look at
-`src-steps/3/ajax.cljs` and paste it in your project.
+We are going to use use [cljs-ajax](https://github.com/JulianBirch/cljs-ajax#getpost-examples)
+to fetch the list of plugins from the server. `http://plugins.lighttable.com/`
 
+Note that to do the crossdomain GET request we have to
+do a little hack (prepend the service url `http://www.corsproxy.com/plugins.lighttable.com/`).
+
+We also have on our `web/` a `plugins.edn`. We can ajax that directly instead of hitting lighttable's servers all the time.
+
+* Create a new namespace `ajax`
+* Define a dummy handler and error-handler (console.log)
+* Try to make a GET request to `/plugins.edn`
+* Make it a function that makes the request
+* Create an `atom` (mutable type, like a pointer, use swap! and reset! to modify it) called `plugins` in the top level. Make our success handler reset the value of plugins to the new one.
+* Make a function `get-plugins` that triggers the ajax call and returns the atom.
 * Include our new namespace in `core`
 * Call to `ajax/get-plugins` to see what is in there
 * Print the first result to the console to see what we can show

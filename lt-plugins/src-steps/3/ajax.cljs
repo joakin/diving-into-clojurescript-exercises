@@ -23,7 +23,7 @@
       :error-handler error-handler}))
 
 (defn get-plugins []
-  (get-plugins-lighttable)
+  (get-plugins-edn)
   plugins)
 
 #_(get-plugins)
