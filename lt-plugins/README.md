@@ -76,9 +76,14 @@ Let's try this example:
 
 Then, render a title and a placeholder for where we will list our plugins
 
+    <div class=app>
+      <h3 class=title>...
+      <div class=plugins>
+        Nothing here yet...
+
 *Code is in `src-steps/2`*
 
-3. Fetch data from the internets
+3. Fetch data from the server
 
 We could use cljs-ajax to fetch the list of plugins from our server,
 since we are doing just the frontend, I faked something. Look at
@@ -88,6 +93,21 @@ since we are doing just the frontend, I faked something. Look at
 * Call to `ajax/get-plugins` to see what is in there
 * Print the first result to the console to see what we can show
 
-*Code is in `src-steps/2`*
+*Code is in `src-steps/3`*
 
-4.
+4. Printing the list of plugins
+
+Print a list of the names of the plugins.
+
+* Just pass the data to your root app component, and pass it down to its subcomponents
+* map your new plugin component over the plugins list
+
+Try to generate something like this:
+
+    <div class=plugin>
+      <h3><a href='url'>Plugin name</a></h3>
+      <p class=version>0.0.0
+      <p class=installs>12
+
+*Code is in `src-steps/3`*
+

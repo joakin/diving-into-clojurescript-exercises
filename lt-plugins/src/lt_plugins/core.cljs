@@ -8,18 +8,39 @@
 
 (def app-dom (.querySelector js/document "#app"))
 
-(defn plugins []
-  [:div.plugins
-   [:p "Nothing to see here... yet"]])
 
-(defn app []
+;; {:added 1389153835495,
+;;  :info {:dependencies {},
+;;         :name Clojure,
+;;         :version 0.0.10,
+;;         :author Kodowa,
+;;         :source https://github.com/LightTable/Clojure,
+;;         :desc Clojure integration for Light Table,
+;;         :behaviors clojure.behaviors},
+;;  :installs 10290,
+;;  :repo Clojure,
+;;  :updated 1397752711508,
+;;  :url https://github.com/LightTable/Clojure,
+;;  :user LightTable}
+
+(defn plugin [{:keys [url installs] {:keys [name version]} :info}]
+  ^{:key name}
+  [:div.plugin
+   [:h3 [:a {:href url} name]]
+   [:p.version version]
+   [:p.installs installs]])
+
+(defn plugins [ps]
+  [:div.plugins
+   (map plugin ps)])
+
+(defn app [data]
   [:div.app
    [:h1.title "LightTable plugins list"]
-   [plugins]])
+   [plugins (:plugins data)]])
 
 (defn init []
-  (ajax/get-plugins)
-  (reagent/render-component [app] app-dom)
-  )
+  (let [data {:plugins (ajax/get-plugins)}]
+    (reagent/render-component [app data] app-dom)))
 
-(println (first (ajax/get-plugins)))
+(init)
