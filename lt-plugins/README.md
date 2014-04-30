@@ -6,6 +6,8 @@ A small webapp for the **diving into clojurescript** workshop.
 
 We are going to build a small webapp to visualize the lighttable plugins on a list.
 
+![LT plugins](https://github.com/joakin/diving-into-clojurescript-exercises/raw/master/lt-plugins/lt-plugins.png)
+
 For compiling:
 ```
 lein cljsbuild auto

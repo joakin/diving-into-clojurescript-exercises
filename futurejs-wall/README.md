@@ -5,6 +5,8 @@ FutureJS wall
 A small clojurescript canvas project for the workshop "diving into
 clojurescript" of FutureJS
 
+![FutureJS wall](https://github.com/joakin/diving-into-clojurescript-exercises/raw/master/futurejs-wall/futurejs-wall.png)
+
 ```
 lein cljsbuild auto
 ```
