@@ -24,6 +24,11 @@
 
 (map :name mes)
 
+;; There is also get-in for nested keys
+(let [p {:name "Anonymous"
+         :prefs {:food :shushi}}]
+  (get-in p [:prefs :food]))
+
 ;; -----------------------------------------------------------------------------------------
 ;; Get works also with vectors
 
