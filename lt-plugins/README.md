@@ -156,3 +156,21 @@ Try to get the details with this structure:
 
 *Code is in `src-steps/5`*
 
+### 6. Organize the code
+
+Let's move each part of the code to its own namespace separated logically.
+
+Get the code to look like this:
+
+    src/lt_plugins/
+    ├── ajax.cljs
+    ├── core.cljs
+    ├── date.cljs
+    └── ui
+        ├── app.cljs
+        ├── label_value.cljs
+        └── plugins.cljs
+
+*Code is in `src-steps/6`*
+
+
