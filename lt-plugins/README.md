@@ -145,7 +145,7 @@ We are going to add a button to the plugin component, and a detailed view of all
   * Change the + to a - depending on the state
 * Make the click handler `swap` the atom value to transition state
 * Create a new component, `plugin-details`. It gets plugin data and renders it all detailed. Call it from `plugin` when it is in its state expanded (at the end of the `.plugin` div)
-  * Render this keys: `{:keys [added updated installs repo url user] {:keys [name version author source desc]} :info}`
+  * Render this keys: `{:keys [added updated url] {:keys [author source desc]} :info}`
 
 Try to get the details with this structure:
 
