@@ -18,7 +18,6 @@
 (defn plugin []
   (let [expanded (atom false)]
     (fn [{:keys [url installs] {:keys [name version]} :info :as p}]
-      ^{:key name}
       [:div.plugin
        [:h3 [:a {:href url} name]]
        [:p.version version]
@@ -32,4 +31,4 @@
 
 (defn plugins [ps]
   [:div.plugins
-   (for [p ps] [plugin p])])
+   (for [p ps] ^{:key p} [plugin p])])
